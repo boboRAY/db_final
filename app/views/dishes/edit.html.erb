@@ -1,6 +1,5 @@
-<h1>Editing dish</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @dish %> |
-<%= link_to 'Back', dishes_path %>
+<%- model_class = Dish -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Dish %></h1>
+</div>
+<%= render :partial => 'form' %>
