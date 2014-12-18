@@ -29,6 +29,7 @@ class DishFeedbacksController < ApplicationController
   # POST /dish_feedbacks.json
   def create
     @dish_feedback = DishFeedback.new(dish_feedback_params)
+    @dish_feedback.user = current_user
 
     respond_to do |format|
       if @dish_feedback.save
