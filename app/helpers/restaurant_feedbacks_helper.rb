@@ -1,0 +1,2 @@
+module RestaurantFeedbacksHelper
+end
