@@ -53,3 +53,5 @@ gem 'tzinfo-data'
 group :development do
   gem 'pry-rails'
 end
+
+gem "rails-erd"
