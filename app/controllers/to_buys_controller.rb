@@ -29,6 +29,7 @@ class ToBuysController < ApplicationController
   # POST /to_buys.json
   def create
     @to_buy = ToBuy.new(to_buy_params)
+    @to_buy.user = current_user
 
     respond_to do |format|
       if @to_buy.save
