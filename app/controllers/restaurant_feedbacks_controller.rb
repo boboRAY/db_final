@@ -29,6 +29,7 @@ class RestaurantFeedbacksController < ApplicationController
   # POST /restaurant_feedbacks.json
   def create
     @restaurant_feedback = RestaurantFeedback.new(restaurant_feedback_params)
+    @restaurant_feedback.user = current_user
 
     respond_to do |format|
       if @restaurant_feedback.save
