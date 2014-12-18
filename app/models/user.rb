@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   has_one :restaurant_feedback
   has_one :dish_feedback
+  has_many :to_buys
 end
