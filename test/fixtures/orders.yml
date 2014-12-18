@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_price: 1
+  driver_id: 
+  user_id: 
+  location_id: 
+  restaurant_id: 
+
+two:
+  total_price: 1
+  driver_id: 
+  user_id: 
+  location_id: 
+  restaurant_id: 
