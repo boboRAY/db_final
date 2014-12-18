@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :discounts
+
   resources :locations
 
   resources :location_types
