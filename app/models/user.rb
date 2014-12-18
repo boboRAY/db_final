@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_one :dish_feedback
   has_many :to_buys
   has_many :orders
+  has_one :driver_feedback
 end
