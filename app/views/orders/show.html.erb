@@ -1,29 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Order %></h1>
+</div>
 
-<p>
-  <strong>Total price:</strong>
-  <%= @order.total_price %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:total_price) %></dt>
+      <dd><pre class="prettyprint"><%= @order.total_price %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Driver:</strong>
-  <%= @order.driver %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              orders_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_order_path(@order), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              order_path(@order),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @order.location %>
-</p>
-
-<p>
-  <strong>Restaurant:</strong>
-  <%= @order.restaurant %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
