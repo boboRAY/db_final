@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable
   has_one :restaurant_feedback
+  has_one :dish_feedback
 end
