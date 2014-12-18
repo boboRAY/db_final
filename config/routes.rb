@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :driver_feedbacks
+
   resources :orders
 
   resources :discounts

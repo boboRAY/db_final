@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @driver_feedback.description %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @driver_feedback.driver %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @driver_feedback.user %>
+</p>
+
+<%= link_to 'Edit', edit_driver_feedback_path(@driver_feedback) %> |
+<%= link_to 'Back', driver_feedbacks_path %>
