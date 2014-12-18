@@ -1,6 +1,5 @@
-<h1>Editing driver_feedback</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @driver_feedback %> |
-<%= link_to 'Back', driver_feedbacks_path %>
+<%- model_class = DriverFeedback -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => DriverFeedback %></h1>
+</div>
+<%= render :partial => 'form' %>
