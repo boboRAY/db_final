@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :orders
+
   resources :discounts
 
   resources :locations
