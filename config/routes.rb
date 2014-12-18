@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :transportations
+
   resources :order_items
 
   resources :dish_types
