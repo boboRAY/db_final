@@ -1,0 +1,27 @@
+<h1>Listing to_buys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Dish</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @to_buys.each do |to_buy| %>
+      <tr>
+        <td><%= to_buy.user %></td>
+        <td><%= to_buy.dish %></td>
+        <td><%= link_to 'Show', to_buy %></td>
+        <td><%= link_to 'Edit', edit_to_buy_path(to_buy) %></td>
+        <td><%= link_to 'Destroy', to_buy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New To buy', new_to_buy_path %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :to_buys
+
   resources :dishes
 
   resources :dish_feedbacks

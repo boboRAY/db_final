@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @to_buy.user %>
+</p>
+
+<p>
+  <strong>Dish:</strong>
+  <%= @to_buy.dish %>
+</p>
+
+<%= link_to 'Edit', edit_to_buy_path(@to_buy) %> |
+<%= link_to 'Back', to_buys_path %>
