@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dish_feedbacks
+
   resources :restaurant_feedbacks
 
   resources :drivers

@@ -1,0 +1,29 @@
+<h1>Listing dish_feedbacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Dish</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dish_feedbacks.each do |dish_feedback| %>
+      <tr>
+        <td><%= dish_feedback.content %></td>
+        <td><%= dish_feedback.dish %></td>
+        <td><%= dish_feedback.user %></td>
+        <td><%= link_to 'Show', dish_feedback %></td>
+        <td><%= link_to 'Edit', edit_dish_feedback_path(dish_feedback) %></td>
+        <td><%= link_to 'Destroy', dish_feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dish feedback', new_dish_feedback_path %>

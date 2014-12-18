@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @dish_feedback.content %>
+</p>
+
+<p>
+  <strong>Dish:</strong>
+  <%= @dish_feedback.dish %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @dish_feedback.user %>
+</p>
+
+<%= link_to 'Edit', edit_dish_feedback_path(@dish_feedback) %> |
+<%= link_to 'Back', dish_feedbacks_path %>
