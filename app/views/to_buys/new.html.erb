@@ -1,5 +1,6 @@
-<h1>New to_buy</h1>
+<%- model_class = ToBuy -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => ToBuy %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', to_buys_path %>
