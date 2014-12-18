@@ -29,6 +29,7 @@ class DriverFeedbacksController < ApplicationController
   # POST /driver_feedbacks.json
   def create
     @driver_feedback = DriverFeedback.new(driver_feedback_params)
+    @driver_feedback.user = current_user
 
     respond_to do |format|
       if @driver_feedback.save
