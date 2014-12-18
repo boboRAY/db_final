@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   has_one :restaurant_feedback
   has_one :dish_feedback
   has_many :to_buys
+  has_many :orders
 end
