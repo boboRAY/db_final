@@ -5,30 +5,20 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th> Dish </th>
+      <th> 餐廳 </th>
     </tr>
   </thead>
   <tbody>
     <% @to_buys.each do |to_buy| %>
       <tr>
-        <td><%= to_buy.id %></td>
-        <td><%=l to_buy.created_at, format: :long %></td>
-        <td>
-          <%= link_to to_buy_path(to_buy), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
-          <%- end -%>
-          <%= link_to to_buy_path(to_buy), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-            <%= glyph 'remove' %>
-          <%- end -%>
-        </td>
+        <td><%= to_buy.dish.name %></td>
+        <td><%= to_buy.dish.restaurant.name %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_to_buy_path,
-            :class => 'btn btn-primary' %>
+<h3>
+  <%= link_to '到餐廳', restaurants_path %>
+</h3>

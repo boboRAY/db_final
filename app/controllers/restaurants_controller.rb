@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  before_filter :require_user_signed_in
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /restaurants

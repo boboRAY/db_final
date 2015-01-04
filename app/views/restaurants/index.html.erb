@@ -1,6 +1,6 @@
 <%- model_class = Restaurant -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => Restaurant %></h1>
+  <h1><%=t '.title', default: Restaurant %></h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -10,33 +10,49 @@
       <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%= model_class.human_attribute_name(:phone) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th> 下訂單 </th>
     </tr>
   </thead>
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.id %></td>
-        <td><%= restaurant.name %></td>
+        <td><%= link_to restaurant.name, dishes_path(rid: restaurant.id) %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone %></td>
         <td><%= restaurant.description %></td>
-        <td><%=l restaurant.created_at, format: :long %></td>
+        <td> <%= link_to '我要訂這家', new_order_path(rid: restaurant.id) %> </td>
+      </tr>
+      <% restaurant.restaurant_feedbacks.each do |fb| %>
+        <tr>
+          <td> <%= fb.content %> </td>
+          <td> <%= fb.created_at %> </td>
+          <td> <%= fb.user.email %> </td>
+        </tr>
+      <% end %>
+      <tr>
         <td>
-          <%= link_to restaurant_path(restaurant), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
-          <%- end -%>
-          <%= link_to restaurant_path(restaurant), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-            <%= glyph 'remove' %>
-          <%- end -%>
+          <%= simple_form_for restaurant.restaurant_feedbacks.build, html: { class: 'form-horizontal form-model' } do |f| %>
+            <div class="form-group">
+              <div class="col-md-10">
+                <%= f.input :content %>
+                <%= f.input :restaurant_id, as: :hidden, input_html: { value: restaurant.id } %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class='col-md-offset-2 col-md-10'>
+                <%= f.submit nil, class: 'btn btn-primary' %>
+              </div>
+            </div>
+          <% end %>
+
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', default: t("helpers.links.new")),
             new_restaurant_path,
-            :class => 'btn btn-primary' %>
+            class: 'btn btn-primary' %>

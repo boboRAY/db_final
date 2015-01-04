@@ -8,7 +8,7 @@ class ToBuysController < ApplicationController
   # GET /to_buys
   # GET /to_buys.json
   def index
-    @to_buys = ToBuy.all
+    @to_buys = current_user.to_buys
   end
 
   # GET /to_buys/1
@@ -28,15 +28,16 @@ class ToBuysController < ApplicationController
   # POST /to_buys
   # POST /to_buys.json
   def create
-    @to_buy = ToBuy.new(to_buy_params)
+    dish = Dish.find(params[:dish_id])
+    @to_buy = ToBuy.new({dish_id: dish.id})
     @to_buy.user = current_user
 
     respond_to do |format|
       if @to_buy.save
-        format.html { redirect_to @to_buy, notice: 'To buy was successfully created.' }
+        format.html { redirect_to dishes_path(rid: dish.restaurant.id), notice: 'To buy was successfully created.' }
         format.json { render :show, status: :created, location: @to_buy }
       else
-        format.html { render :new }
+        format.html { redirect_to dishes_path(rid: dish.restaurant.id), notice: 'Error when creating to_buys.' }
         format.json { render json: @to_buy.errors, status: :unprocessable_entity }
       end
     end

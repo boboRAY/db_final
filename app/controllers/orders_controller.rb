@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = current_user.orders
   end
 
   # GET /orders/1
@@ -30,13 +30,16 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user = current_user
+    @order.driver = Driver.all.sample
+    @order.restaurant = @order.dishes.first.restaurant
+    @order.total_price = @order.dishes.map(&:price).sum
 
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new }
+        format.html { redirect_to restaurants_path }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -74,6 +77,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:total_price, :driver_id, :user_id, :location_id, :restaurant_id)
+      params.require(:order).permit(:location_id, :discount_id, dish_ids: [])
     end
 end

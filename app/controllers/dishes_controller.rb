@@ -4,7 +4,8 @@ class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.json
   def index
-    @dishes = Dish.all
+    @restaurant = Restaurant.find(params[:rid])
+    @dishes = @restaurant.dishes
   end
 
   # GET /dishes/1

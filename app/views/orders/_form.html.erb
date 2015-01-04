@@ -1,8 +1,12 @@
-<%= form_for @order, :html => { :class => 'form-horizontal form-model' } do |f| %>
+<%= simple_form_for @order, :html => { :class => 'form-horizontal form-model' } do |f| %>
   <div class="form-group">
-    <%= f.label :total_price, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.number_field :total_price, :class => 'text-field form-control' %>
+      <% res = Restaurant.find(params[:rid]) %>
+      你現在在訂的餐廳是 <%= res.name %>, 他有如下的折價卷：<br>
+      <%= f.association :discount, collection: res.discounts %>
+
+      <%= f.association :dishes, collection: res.dishes %>
+      <%= f.association :location %>
     </div>
   </div>
 

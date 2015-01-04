@@ -1,31 +1,21 @@
 Rails.application.routes.draw do
+  root 'to_buys#index'
+
   resources :to_buys
-
   resources :dishes
-
   resources :dish_feedbacks
-
   resources :restaurant_feedbacks
-
   resources :drivers
-
   resources :driver_feedbacks
-
   resources :orders
-
   resources :discounts
-
   resources :locations
-
   resources :location_types
-
   resources :transportations
-
   resources :order_items
-
   resources :dish_types
-
   resources :restaurants
+
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.

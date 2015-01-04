@@ -55,3 +55,5 @@ group :development do
 end
 
 gem "rails-erd"
+
+gem "annotate"

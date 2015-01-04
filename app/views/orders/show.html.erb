@@ -6,19 +6,20 @@
 <div class="fieldset">
   <dl>
       <dt class="label label-default"><%= model_class.human_attribute_name(:total_price) %></dt>
-      <dd><pre class="prettyprint"><%= @order.total_price %></pre></dd>
+      <dd>
+      <pre class="prettyprint">
+        <%= @order.total_price %> * <%= @order.discount.title %>( <%= @order.discount.percentage %> ) = <%= @order.final_price %>
+      </pre>
+      </dd>
+
+      <dt class="label label-default"> Dishes </dt>
+      <dd><pre class="prettyprint"><%= @order.dishes.map(&:name).join(', ') %></pre></dd>
+
+      <dt class="label label-default"> Restaurant </dt>
+      <dd><pre class="prettyprint"><%= @order.restaurant.name %></pre></dd>
+
+      <dt class="label label-default"> Driver </dt>
+      <dd><pre class="prettyprint"><%= @order.driver.name %></pre></dd>
+      <dd><pre class="prettyprint"><%= @order.driver.transportation.name %></pre></dd>
   </dl>
 </div>
-
-<div class="form-group">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              orders_path, :class => 'btn btn-default'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_order_path(@order), :class => 'btn btn-default' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              order_path(@order),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
-
