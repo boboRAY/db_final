@@ -23,3 +23,85 @@
       <dd><pre class="prettyprint"><%= @order.driver.transportation.name %></pre></dd>
   </dl>
 </div>
+
+<% @order.dishes.each do |dish| %>
+
+  <h4>Feedback for <%= dish.name %></h4>
+  <div class="fieldset">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th> Content </th>
+          <th> Created At </th>
+          <th> Gave by </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% dish.dish_feedbacks.each do |fb| %>
+          <tr>
+            <td> <%= fb.content %> </td>
+            <td> <%= fb.created_at %> </td>
+            <td> <%= fb.user.email %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+    <%= simple_form_for(dish.dish_feedbacks.build, url: dish_feedbacks_path(order_id: @order.id), html: { class: 'form-horizontal form-model' }) do |f| %>
+      <div class="form-group">
+        <div class="col-md-10">
+          <%= f.input :content %>
+          <%= f.input :dish_id, as: :hidden, input_html: { value: dish.id } %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='col-md-offset-2 col-md-10'>
+          <%= f.submit nil, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<h4>Feedback for <%= @order.driver.name %></h4>
+<div class="fieldset">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th> Content </th>
+        <th> Created At </th>
+        <th> Gave by </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.driver.driver_feedbacks.each do |fb| %>
+        <tr>
+          <td> <%= fb.content %> </td>
+          <td> <%= fb.created_at %> </td>
+          <td> <%= fb.user.email %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+  <%= simple_form_for(@order.driver.driver_feedbacks.build, url: driver_feedbacks_path(order_id: @order.id), html: { class: 'form-horizontal form-model' }) do |f| %>
+    <div class="form-group">
+      <div class="col-md-10">
+        <%= f.input :content %>
+        <%= f.input :driver_id, as: :hidden, input_html: { value: @order.driver.id } %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='col-md-offset-2 col-md-10'>
+        <%= f.submit nil, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>

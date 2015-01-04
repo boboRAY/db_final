@@ -14,12 +14,12 @@ two:
 #
 # Table name: driver_feedbacks
 #
-#  id          :integer          not null, primary key
-#  description :text
-#  driver_id   :integer
-#  user_id     :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id         :integer          not null, primary key
+#  content    :text
+#  driver_id  :integer
+#  user_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
 #
 # Indexes
 #

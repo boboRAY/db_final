@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104064947) do
+ActiveRecord::Schema.define(version: 20150104071845) do
 
   create_table "discounts", force: true do |t|
     t.text     "description"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150104064947) do
   add_index "dishes", ["restaurant_id"], name: "index_dishes_on_restaurant_id"
 
   create_table "driver_feedbacks", force: true do |t|
-    t.text     "description"
+    t.text     "content"
     t.integer  "driver_id"
     t.integer  "user_id"
     t.datetime "created_at"
