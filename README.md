@@ -1,16 +1,56 @@
-== README
-
 Environment
 ============
 Ruby 2.1.3
 
 Rails 4.1.4
 
+Installation Ruby and Rails
+==============
+
+We will use rbenv to install ruby. Here are following steps
+
+3-B-1. 安裝命令行工具（如果已經有安裝 Xocde 則跳過）
+
+打開終端機輸入下面命令：
+
+`$ xcode-select --install`
+
+3-B-2. 安裝 Homebrew：
+
+`$  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
+
+3-B-3. 安裝 rbenv：
+```
+$ brew update
+$ brew install rbenv ruby-build
+$ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+$ echo 'export PATH="$HOME/.rbenv/shims:$PATH"' >> ~/.bash_profile
+$ source ~/.bash_profile
+```
+
+3-B-4. 用 rbenv 安裝 Ruby：
+
+`$ rbenv install 2.1.3`
+
+如果遇到 `OpenSSL::SSL::SSLError: ... : certificate verify failed` 錯誤，試試：
+```
+$ brew install curl-ca-bundle`
+$ cp /usr/local/opt/curl-ca-bundle/share/ca-bundle.crt `ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE'`
+```
+
+3-B-5. 設定預設使用的 Ruby:
+
+`$ rbenv global 2.1.3`
+
+3-B-6. 安裝 rails:
+
+`$ gem install rails --no-ri --no-rdoc`
 
 
-Begin
+
+Set Up Project
 ============
-First clone this project 
+First clone this project from this repo 
 
 then follow these steps
 
