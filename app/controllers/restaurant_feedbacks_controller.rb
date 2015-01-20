@@ -11,7 +11,7 @@ class RestaurantFeedbacksController < ApplicationController
 
     respond_to do |format|
       if @restaurant_feedback.save
-        format.html { redirect_to restaurants_path, notice: 'Restaurant feedback was successfully created.' }
+        format.html { redirect_to restaurants_path, notice: '已留言！' }
         format.json { render :show, status: :created, location: @restaurant_feedback }
       else
         format.html { redirect_to restaurants_path, notice: 'Restaurant feedback was not created.' }

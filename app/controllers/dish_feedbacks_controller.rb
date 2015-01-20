@@ -11,7 +11,7 @@ class DishFeedbacksController < ApplicationController
 
     respond_to do |format|
       if @dish_feedback.save
-        format.html { redirect_to order_path(params[:order_id]), notice: 'Dish feedback was successfully created.' }
+        format.html { redirect_to order_path(params[:order_id]), notice: '已留言！' }
         format.json { render :show, status: :created, location: @dish_feedback }
       else
         format.html { redirect_to order_path(params[:order_id]), notice: 'Dish feedback was not created.' }

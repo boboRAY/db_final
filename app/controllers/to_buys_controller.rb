@@ -34,7 +34,7 @@ class ToBuysController < ApplicationController
 
     respond_to do |format|
       if @to_buy.save
-        format.html { redirect_to dishes_path(rid: dish.restaurant.id), notice: 'To buy was successfully created.' }
+        format.html { redirect_to dishes_path(rid: dish.restaurant.id), notice: '已加入待買清單！' }
         format.json { render :show, status: :created, location: @to_buy }
       else
         format.html { redirect_to dishes_path(rid: dish.restaurant.id), notice: 'Error when creating to_buys.' }
