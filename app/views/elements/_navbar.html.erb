@@ -1,3 +1,6 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -7,10 +10,15 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
+<<<<<<< HEAD
     <%= link_to "待買清單", defined?(root_path) ? root_path : "#", class: "navbar-brand" %>
     <%= link_to "餐廳列表", defined?(restaurants_path) ? restaurants_path : "#", class: "navbar-brand" %>
     <%= link_to "訂單", defined?(orders_path) ? orders_path : "#", class: "navbar-brand" %>
    </div>
+=======
+    <%= link_to "肚肚餓餓的", defined?(root_path) ? root_path : "#", class: "navbar-brand" %>
+  </div>
+>>>>>>> c245ae4f0a1c60291282e1712cc5d8a15d6d81ca
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -20,16 +28,17 @@
       <% if defined?(Devise) %>
         <% if user_signed_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+            您的帳戶 <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+              <li><%= link_to "帳戶管理", edit_user_registration_path %></li>
               <li class="divider"></li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to "登出", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "登入", new_user_session_path %></li>
+          <li><%= link_to "註冊", new_user_registration_path %></li>
         <% end %>
       <% end %>
     </ul>

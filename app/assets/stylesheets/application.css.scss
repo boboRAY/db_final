@@ -35,3 +35,33 @@
 .form-user {
   max-width: 450px;
 }
+
+.navbar-default {
+	background-color: #f16b2e;
+	border-color: #f16b2e;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
+}
+
+.navbar {
+	min-height: 100px;
+}
+
+.navbar-nav > li > a {
+    line-height: 70px;
+}
+
+.navbar-collapse {
+	height: 100px;
+	font-size: 16px;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	background-color: #f16b2e;
+}
