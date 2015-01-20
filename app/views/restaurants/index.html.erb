@@ -1,15 +1,16 @@
 <%- model_class = Restaurant -%>
 <div class="page-header">
+  <h1><%=t '餐廳列表'%></h1>
   <h1><%=t '.title', default: Restaurant %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>ID</th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:phone) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:餐廳名稱) %></th>
+      <th><%= model_class.human_attribute_name(:餐廳地址) %></th>
+      <th><%= model_class.human_attribute_name(:餐廳電話) %></th>
+      <th><%= model_class.human_attribute_name(:餐廳敘述) %></th>
       <th> 下訂單 </th>
     </tr>
   </thead>
