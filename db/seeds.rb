@@ -9,40 +9,65 @@
 User.create(email: 'admin@admin.com', password: 'admin1234')
 
 Restaurant.create([
-  { name: '臺1牛奶', address: '羅斯福路', phone: '0912345678', description: 'abcdf' },
-  { name: '臺2牛奶', address: '羅斯福路1', phone: '912345680', description: 'abcdf' }
+  { name: '臺一牛奶大王', address: '台北市大安區新生南路三段 82 號', phone: '02-2363-4341', description: '誰說冬至才能吃湯圓？必吃的公館美食！' },
+  { name: '韓庭州', address: '台北市大安區溫州街 87 號', phone: '02-8369-1302', description: '平價美味韓式料理' },
+  { name: '貳樓餐廳', address: '台北市中正區羅斯福路三段 316 巷 9 弄 7 號', phone: '02-2364-1666', description: '絕對讓你吃飽的美式料理' },
+  { name: 'So Free Pizza 柴燒窯烤比薩', address: '台北市羅斯福路三段 283 巷 28 號', phone: '02-2364-3351', description: '平價窯烤披薩，讓我們一起沈浸在起司海中吧！' }
 ])
 
 Discount.create([
-  { description: 'HAHAHA', title: 'HOHOHO -- 9折', restaurant_id: 1, percentage: 0.9 },
-  { description: 'HAHooo', title: 'Hoasdfjas -- 3折', restaurant_id: 1, percentage: 0.3 },
-  { description: 'HAHasdfasd', title: 'HOHOHO -- 8折', restaurant_id: 2, percentage: 0.8 },
-  { description: 'asdfasdf', title: 'asdf92034 -- 7折', restaurant_id: 2, percentage: 0.7 }
+  { description: '學生優惠', title: '學生優惠 -- 9折', restaurant_id: 1, percentage: 0.9 },
+  { description: '刷卡優惠', title: '刷卡優惠 -- 95折', restaurant_id: 3, percentage: 0.95 },
 ])
 
-DishType.create([{ name: '日本菜' }, { name: '中國菜' }])
+DishType.create([{ name: '日式料理' }, { name: '中式料理' }, { name: '韓式料理' }, { name: '點心' }, { name: '美式料理' }, { name: '義式料理' }])
 
 Dish.create([
-  { restaurant_id: 1, name: 'dish 1-1', description: 'diasjdlf', price: 100, dish_type_id: 1 },
-  { restaurant_id: 1, name: 'dish 1-2', description: 'daasdfas', price: 200, dish_type_id: 2 },
+  { restaurant_id: 1, name: 'dish 1-1', description: '八寶冰', price: 55, dish_type_id: 4 },
+  { restaurant_id: 1, name: 'dish 1-2', description: '八寶牛奶冰', price: 65, dish_type_id: 4 },
 
-  { restaurant_id: 2, name: 'dish 2-1', description: 'di1231jdlf', price: 300, dish_type_id: 1 },
-  { restaurant_id: 2, name: 'dish 2-2', description: 'da1231dfas', price: 700, dish_type_id: 2 },
+  { restaurant_id: 2, name: 'dish 2-1', description: '泡菜鍋', price: 130, dish_type_id: 3 },
+  { restaurant_id: 2, name: 'dish 2-2', description: '蛤蜊豆腐鍋', price: 130, dish_type_id: 3 },
+  { restaurant_id: 2, name: 'dish 2-2', description: '海鮮豆腐鍋', price: 150, dish_type_id: 3 },
+  { restaurant_id: 2, name: 'dish 2-2', description: '牛肉湯飯', price: 150, dish_type_id: 3 },
+
+  { restaurant_id: 3, name: 'dish 3-1', description: '紐澳良鮮蝦辣味沙拉', price: 260, dish_type_id: 5 },
+  { restaurant_id: 3, name: 'dish 3-2', description: '老法式骰子牛早餐', price: 380, dish_type_id: 5 },
+  { restaurant_id: 3, name: 'dish 3-3', description: '總匯活力歐姆蕾', price: 260, dish_type_id: 5 },
+  { restaurant_id: 3, name: 'dish 3-4', description: '紐奧良辣味海鮮筆尖麵', price: 260, dish_type_id: 5 },
+  { restaurant_id: 3, name: 'dish 3-5', description: '貳樓漢堡塔', price: 280, dish_type_id: 5 },
+  { restaurant_id: 3, name: 'dish 3-6', description: '全美起司蛋糕', price: 150, dish_type_id: 5 },
+
+  { restaurant_id: 4, name: 'dish 4-1', description: '海鮮口味', price: 130, dish_type_id: 6 },
+  { restaurant_id: 4, name: 'dish 4-2', description: '素食口味', price: 130, dish_type_id: 6 },
+  { restaurant_id: 4, name: 'dish 4-3', description: '起司口味', price: 130, dish_type_id: 6 },
 ])
 
-LocationType.create([{ name: '公家機關' }, { name: '學校' }])
+LocationType.create([{ name: '台灣大學' }, { name: '宿舍' }])
+
 
 Location.create([
-  { name: '總統府', address: '你家', location_type_id: 1 },
-  { name: '臺大', address: 'losfu rd.', location_type_id: 2 }
+  { name: '新體育館', address: '', location_type_id: 1 },
+  { name: '社科院', address: '', location_type_id: 1 },
+  { name: '霖澤館', address: '', location_type_id: 1 },
+  { name: '小福廣場', address: '', location_type_id: 1 },
+  { name: '鹿鳴廣場', address: '', location_type_id: 1 },
+  { name: '總圖前', address: '', location_type_id: 1 },
+  { name: '長興 BOT', address: '', location_type_id: 2 },
+  { name: '水源 BOT', address: '', location_type_id: 2 },
+  { name: '前門女宿區', address: '', location_type_id: 2 },
+  { name: '女九舍', address: '', location_type_id: 2 },
+  { name: '男宿區', address: '', location_type_id: 2 },
 ])
 
 Transportation.create([
-  { name: '摩托車' },
-  { name: '賓士' }
+  { name: '腳踏車' },
+  { name: '機車' },
+  { name: '步行' },
 ])
 
 Driver.create([
-  { name: 'Dirver 1', phone: '0912345', working_time: 'monday', transportation_id: 1 },
-  { name: 'Dirver 2', phone: '0912345', working_time: 'monday', transportation_id: 2 }
+  { name: '楊小姐', phone: '0910-407727', working_time: '全天候', transportation_id: 1 },
+  { name: '黃先生', phone: '0921-337337', working_time: '全天候', transportation_id: 3 },
+  { name: '蔡先生', phone: '0910-408827', working_time: '全天候', transportation_id: 2 }
 ])
