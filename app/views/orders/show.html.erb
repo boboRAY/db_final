@@ -1,24 +1,25 @@
 <%- model_class = Order -%>
 <div class="page-header">
+  <h1><%=t '您的訂單明細'%></h1>
   <h1><%=t '.title', :default => Order %></h1>
 </div>
 
 <div class="fieldset">
   <dl>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:total_price) %></dt>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:總價格) %></dt>
       <dd>
       <pre class="prettyprint">
         <%= @order.total_price %> * <%= @order.discount.title %>( <%= @order.discount.percentage %> ) = <%= @order.final_price %>
       </pre>
       </dd>
 
-      <dt class="label label-default"> Dishes </dt>
+      <dt class="label label-default"> 餐點名稱 </dt>
       <dd><pre class="prettyprint"><%= @order.dishes.map(&:name).join(', ') %></pre></dd>
 
-      <dt class="label label-default"> Restaurant </dt>
+      <dt class="label label-default"> 餐點來源 </dt>
       <dd><pre class="prettyprint"><%= @order.restaurant.name %></pre></dd>
 
-      <dt class="label label-default"> Driver </dt>
+      <dt class="label label-default"> 配送司機姓名與配送方式 </dt>
       <dd><pre class="prettyprint"><%= @order.driver.name %></pre></dd>
       <dd><pre class="prettyprint"><%= @order.driver.transportation.name %></pre></dd>
   </dl>
@@ -26,15 +27,15 @@
 
 <% @order.dishes.each do |dish| %>
 
-  <h4>Feedback for <%= dish.name %></h4>
+  <h4>為 <%= dish.name %> 寫下評價 </h4>
   <div class="fieldset">
 
     <table class="table table-striped">
       <thead>
         <tr>
-          <th> Content </th>
-          <th> Created At </th>
-          <th> Gave by </th>
+          <th> 評價內容 </th>
+          <th> 撰寫時間 </th>
+          <th> 撰寫用戶 </th>
         </tr>
       </thead>
       <tbody>
@@ -67,15 +68,15 @@
 <% end %>
 
 
-<h4>Feedback for <%= @order.driver.name %></h4>
+<h4> 為 <%= @order.driver.name %> 寫下評價 </h4>
 <div class="fieldset">
 
   <table class="table table-striped">
     <thead>
       <tr>
-        <th> Content </th>
-        <th> Created At </th>
-        <th> Gave by </th>
+        <th> 評價內容 </th>
+        <th> 撰寫時間 </th>
+        <th> 撰寫用戶 </th>
       </tr>
     </thead>
     <tbody>

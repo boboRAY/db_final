@@ -23,24 +23,24 @@ Discount.create([
 DishType.create([{ name: '日式料理' }, { name: '中式料理' }, { name: '韓式料理' }, { name: '點心' }, { name: '美式料理' }, { name: '義式料理' }])
 
 Dish.create([
-  { restaurant_id: 1, name: 'dish 1-1', description: '八寶冰', price: 55, dish_type_id: 4 },
-  { restaurant_id: 1, name: 'dish 1-2', description: '八寶牛奶冰', price: 65, dish_type_id: 4 },
+  { restaurant_id: 1, name: '八寶冰', description: '八寶冰', price: 55, dish_type_id: 4 },
+  { restaurant_id: 1, name: '八寶牛奶冰', description: '八寶牛奶冰', price: 65, dish_type_id: 4 },
 
-  { restaurant_id: 2, name: 'dish 2-1', description: '泡菜鍋', price: 130, dish_type_id: 3 },
-  { restaurant_id: 2, name: 'dish 2-2', description: '蛤蜊豆腐鍋', price: 130, dish_type_id: 3 },
-  { restaurant_id: 2, name: 'dish 2-2', description: '海鮮豆腐鍋', price: 150, dish_type_id: 3 },
-  { restaurant_id: 2, name: 'dish 2-2', description: '牛肉湯飯', price: 150, dish_type_id: 3 },
+  { restaurant_id: 2, name: '泡菜鍋', description: '泡菜鍋', price: 130, dish_type_id: 3 },
+  { restaurant_id: 2, name: '蛤蜊豆腐鍋', description: '蛤蜊豆腐鍋', price: 130, dish_type_id: 3 },
+  { restaurant_id: 2, name: '海鮮豆腐鍋', description: '海鮮豆腐鍋', price: 150, dish_type_id: 3 },
+  { restaurant_id: 2, name: '牛肉湯飯', description: '牛肉湯飯', price: 150, dish_type_id: 3 },
 
-  { restaurant_id: 3, name: 'dish 3-1', description: '紐澳良鮮蝦辣味沙拉', price: 260, dish_type_id: 5 },
-  { restaurant_id: 3, name: 'dish 3-2', description: '老法式骰子牛早餐', price: 380, dish_type_id: 5 },
-  { restaurant_id: 3, name: 'dish 3-3', description: '總匯活力歐姆蕾', price: 260, dish_type_id: 5 },
-  { restaurant_id: 3, name: 'dish 3-4', description: '紐奧良辣味海鮮筆尖麵', price: 260, dish_type_id: 5 },
-  { restaurant_id: 3, name: 'dish 3-5', description: '貳樓漢堡塔', price: 280, dish_type_id: 5 },
-  { restaurant_id: 3, name: 'dish 3-6', description: '全美起司蛋糕', price: 150, dish_type_id: 5 },
+  { restaurant_id: 3, name: '紐澳良鮮蝦辣味沙拉', description: '紐澳良鮮蝦辣味沙拉', price: 260, dish_type_id: 5 },
+  { restaurant_id: 3, name: '老法式骰子牛早餐', description: '老法式骰子牛早餐', price: 380, dish_type_id: 5 },
+  { restaurant_id: 3, name: '總匯活力歐姆蕾', description: '總匯活力歐姆蕾', price: 260, dish_type_id: 5 },
+  { restaurant_id: 3, name: '紐奧良辣味海鮮筆尖麵', description: '紐奧良辣味海鮮筆尖麵', price: 260, dish_type_id: 5 },
+  { restaurant_id: 3, name: '貳樓漢堡塔', description: '貳樓漢堡塔', price: 280, dish_type_id: 5 },
+  { restaurant_id: 3, name: '全美起司蛋糕', description: '全美起司蛋糕', price: 150, dish_type_id: 5 },
 
-  { restaurant_id: 4, name: 'dish 4-1', description: '海鮮口味', price: 130, dish_type_id: 6 },
-  { restaurant_id: 4, name: 'dish 4-2', description: '素食口味', price: 130, dish_type_id: 6 },
-  { restaurant_id: 4, name: 'dish 4-3', description: '起司口味', price: 130, dish_type_id: 6 },
+  { restaurant_id: 4, name: '海鮮口味', description: '海鮮口味', price: 130, dish_type_id: 6 },
+  { restaurant_id: 4, name: '素食口味', description: '素食口味', price: 130, dish_type_id: 6 },
+  { restaurant_id: 4, name: '起司口味', description: '起司口味', price: 130, dish_type_id: 6 },
 ])
 
 LocationType.create([{ name: '台灣大學' }, { name: '宿舍' }])
