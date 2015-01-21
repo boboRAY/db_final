@@ -15,6 +15,7 @@
       <tr>
         <td><%= to_buy.dish.name %></td>
         <td><%= to_buy.dish.restaurant.name %></td>
+        <td><%= link_to '刪除', to_buy, :confirm => "確定刪除？", :method => :delete, :class => "user-additional", :style => "font-size:12px;font-weight:normal;" %></td>
       </tr>
     <% end %>
   </tbody>

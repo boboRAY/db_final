@@ -17,6 +17,7 @@
         <td><%= link_to order.id, order %></td>
         <td><%= order.total_price %></td>
         <td><%=l order.created_at, format: :long %></td>
+        <td><%= link_to '刪除訂單', order, :confirm => "確定刪除？", :method => :delete, :class => "user-additional", :style => "font-size:12px;font-weight:normal;" %></td>
       </tr>
     <% end %>
   </tbody>
