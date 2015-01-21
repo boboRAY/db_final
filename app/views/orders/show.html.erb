@@ -9,7 +9,11 @@
       <dt class="label label-default"><%= model_class.human_attribute_name(:總價格) %></dt>
       <dd>
       <pre class="prettyprint">
+      <% if @order.discount_id %>
         <%= @order.total_price %> * <%= @order.discount.title %>( <%= @order.discount.percentage %> ) = <%= @order.final_price %>
+      <% else %>
+        <%= @order.final_price %>
+      <% end %>
       </pre>
       </dd>
 

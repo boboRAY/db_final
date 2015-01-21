@@ -8,7 +8,11 @@ class Order < ActiveRecord::Base
   has_many :dishes, through: :order_items
 
   def final_price
-    (total_price * discount.percentage).to_i
+    if discount
+      (total_price * discount.percentage).to_i
+    else
+      total_price
+    end
   end
 
 end
